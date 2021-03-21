@@ -7,6 +7,15 @@ The goal of this project is to train an agent to navigate and collect bananas wi
 
 The agent receives a reward of +1 for every yellow banana and -1 for every blue banana that it collects. The goal is to collect the maximum amount of yellow bananas while avoiding the blue ones.
 
+The state space has 37 dimensions, which contains the agent's velocity and ray-based perception of objects around the agent's forward direction. Each state space value ranges between 0 and 1. With this information the agent needs to learn the best four discrete actions:
+
+* `0` - move forward
+* `1` - move backward
+* `2` - turn left
+* `3` - turn right
+
+The task is episodic, and to solve the environment the agent must get an average score greater than 13 over 100 consecutive episodes.
+
 ## Getting Started
 You will need to set up your python environment.
 1. Create (and activate) a new environment with Python 3.6
@@ -51,6 +60,12 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 ## Instructions
 
 Follow the instruction in `Navigation.ipynb` to get started with training your agent!
+## Files
+* `Navigation.ipynb` This is the Jupyter notebook that contains the implementation of the DQN algorithm.
+* `dqn_agent.py` This Python file contains two classes: `Agent` and `ReplayBuffer`. The `Agent` class contains an `act` method used to return an action for a given state and current policy. It also has a `learn` method used to updated the Q-network parameters given a batch of experience tuples. The `ReplayBuffer` class has an `add` method to add a new experience to the memory buffer, and a `sample` method used to randomly fetch a batch of experiences from memory.
+* `model.py` This Python file contains the Q-Network model, which maps 37 input states to 4 action values. This neural network contains two hidden layers, each with 64 nodes. A ReLU activation function is used after the output of the first and second hidden layers, and an identity activation function for the output.
+* `checkpoint.pth` This file contains the DQN weights of the trained agent.
+
 
 ## License
 The source code is released under an [MIT license.](https://opensource.org/licenses/MIT)
