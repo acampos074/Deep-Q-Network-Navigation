@@ -1,6 +1,6 @@
 ## Report
 ### Learning algorithm
-The algorithm used to solve this Reinforcement Learning problem is Deep Q-Learning (DQN). In this algorithm, an agent is trained for a fixed number of episodes, and for a fixed episode length. For each episode, the agent observes the current state, then chooses an action derived from an epsilon-greedy policy and sends it to the environment. Afterwards, the environment provides a reward and an updated state to the agent. Fig. 1 provides an illustration of this algorithm. Note, that initially the algorithm starts with an epsilon value of 1 (i.e. the agent initially takes random actions). As the agent goes through more training episodes this epsilon decreases and starts taking more actions using the Q-network. 
+The algorithm used to solve this Reinforcement Learning problem is Deep Q-Learning (DQN). In this algorithm, an agent is trained for a fixed number of episodes, and for a fixed episode length. For each episode, the agent observes the current state, then chooses an action derived from an epsilon-greedy policy and sends it to the environment. Afterwards, the environment provides a reward and an updated state to the agent. Fig. 1 provides an illustration of this algorithm. Note, that initially the algorithm starts with an epsilon value of 1 (i.e. the agent initially takes random actions). As the agent goes through more training episodes this epsilon decreases and starts taking more actions using the Q-network.
 
 ![alt-text](https://raw.githubusercontent.com/acampos074/Deep-Q-Network-Navigation/master/Figures/DQN.png)
 
@@ -41,6 +41,7 @@ Experience replay helps to break correlations from sequential observations. Duri
 Fig. 3 illustrates the temporal evolution of the agent's score-per-episode.
 
 ![alt-text](https://raw.githubusercontent.com/acampos074/Deep-Q-Network-Navigation/master/Figures/avg_scores.png)
+
 **Figure 3 | Training curve tracking the agent's score.** The average scores (orange line) shows that the agent is able to receive a score of at least +13 over 500 episodes.
 ### Ideas of Future Work
 Other ideas to further improve the agent's performance include:
